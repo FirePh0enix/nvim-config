@@ -10,7 +10,7 @@ require("lazy").setup({
 	{ import = "plugins" }
 })
 
-require("keymaps")
+require("terminal")
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -23,9 +23,7 @@ require("nvim-treesitter.configs").setup({
 	}
 })
 
--- LSP Config
-local lspconfig = require("lspconfig")
-lspconfig.clangd.setup({})
+require("lsp")
 
 -- Neovim config
 vim.opt.number = true
