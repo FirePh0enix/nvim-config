@@ -10,20 +10,21 @@ require("lazy").setup({
 	{ import = "plugins" }
 })
 
-require("terminal")
-
 require("mason").setup()
 require("mason-lspconfig").setup()
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c", "lua" },
+	ensure_installed = { "c", "lua", "zig" },
 	sync_install = false,
 	highlight = {
 		enable = true
-	}
+	},
 })
 
-require("lsp")
+require('nvim-web-devicons').setup({})
+
+require('terminal')
+require('lsp')
 
 -- Neovim config
 vim.opt.number = true
@@ -37,3 +38,12 @@ vim.opt.shiftwidth = 4
 -- Telescope
 local telescope = require("telescope.builtin")
 vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
+
+-- 42 Header
+vim.g.user42 = 'ledelbec'
+vim.g.email42 = 'ledelbec@student.42.fr'
+
+-- Colors
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#3B4252' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#3B4252' })
+

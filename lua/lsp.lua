@@ -1,6 +1,13 @@
-local lspconfig = require("lspconfig")
-lspconfig.clangd.setup({})
+local lspconfig = require('lspconfig')
+local coq = require('coq')
+lspconfig.clangd.setup(coq.lsp_ensure_capabilities({}))
+lspconfig.zls.setup(coq.lsp_ensure_capabilities({}))
 
+vim.g.coq_settings = {
+	keymap = {
+		recommended = false,
+	},
+}
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	callback = function (ev)
@@ -32,4 +39,6 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+vim.cmd('COQnow -s')
 
