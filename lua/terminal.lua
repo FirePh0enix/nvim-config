@@ -38,5 +38,24 @@ function toggle_terminal()
 	end
 end
 
+function relaunch_terminal()
+	if term_win == -1 then
+		toggle_terminal()
+		vim.cmd('close')
+		term_win = -1
+		term_buf = -1
+		toggle_terminal()
+	else
+		vim.api.nvim_set_current_win(term_win)
+		vim.api.nvim_set_current_buf(term_buf)
+		vim.cmd('close')
+		term_win = -1
+		term_buf = -1
+		toggle_terminal()
+	end
+end
+
 vim.keymap.set('n', '<leader>t', toggle_terminal, { silent = true })
-vim.keymap.set('t', '<Esc>', '<C-\\><C-N>', { silent = true }) -- Use <Esc> to return to normal mode
+vim.keymap.set('n', '<leader>rt', relaunch_terminal, { silent = true })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-N>', { silent = true })
+

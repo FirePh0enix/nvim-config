@@ -44,6 +44,8 @@ vim.g.user42 = 'ledelbec'
 vim.g.email42 = 'ledelbec@student.42.fr'
 
 -- Colors
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#3B4252' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#3B4252' })
+require('catppuccin').setup({
+	no_italic = true,
+})
+vim.cmd.colorscheme('catppuccin')
 
