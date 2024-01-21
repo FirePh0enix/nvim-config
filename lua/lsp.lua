@@ -3,6 +3,13 @@ local coq = require('coq')
 lspconfig.clangd.setup(coq.lsp_ensure_capabilities({}))
 lspconfig.zls.setup(coq.lsp_ensure_capabilities({}))
 
+lspconfig.gdscript.setup(coq.lsp_ensure_capabilities({
+	single_file_support = false,
+	cmd = { 'ncat', '127.0.0.1', '6005' },
+	root_dir = vim.fs.dirname(vim.fs.find({ 'project.godot', '.git' }, { upward = true })[1]),
+	filetypes = { 'gd', 'gdscript', 'gdscript3' },
+}))
+
 vim.g.coq_settings = {
 	keymap = {
 		recommended = false,

@@ -46,6 +46,7 @@ vim.g.email42 = 'ledelbec@student.42.fr'
 -- Colors
 require('catppuccin').setup({
 	no_italic = true,
+	no_underline = true
 })
 vim.cmd.colorscheme('catppuccin')
 
