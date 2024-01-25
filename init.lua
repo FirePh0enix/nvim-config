@@ -35,6 +35,12 @@ vim.opt.listchars = 'tab:▸ ,trail:·'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+-- Buffer navigation
+vim.keymap.set('n', '<leader>h', '<C-w>h')
+vim.keymap.set('n', '<leader>j', '<C-w>j')
+vim.keymap.set('n', '<leader>k', '<C-w>k')
+vim.keymap.set('n', '<leader>l', '<C-w>l')
+
 -- Telescope
 local telescope = require("telescope.builtin")
 vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
