@@ -41,7 +41,7 @@ vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
 
 -- 42 Header
 vim.g.user42 = 'ledelbec'
-vim.g.email42 = 'ledelbec@student.42.fr'
+vim.g.mail42 = 'ledelbec@student.42.fr'
 
 -- Colors
 require('catppuccin').setup({
