@@ -23,7 +23,7 @@ require("nvim-treesitter.configs").setup({
 
 require('nvim-web-devicons').setup({})
 
-require('terminal')
+-- require('terminal')
 require('lsp')
 
 -- Neovim config
@@ -35,11 +35,20 @@ vim.opt.listchars = 'tab:▸ ,trail:·'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 -- Buffer navigation
 vim.keymap.set('n', '<leader>h', '<C-w>h')
 vim.keymap.set('n', '<leader>j', '<C-w>j')
 vim.keymap.set('n', '<leader>k', '<C-w>k')
 vim.keymap.set('n', '<leader>l', '<C-w>l')
+
+vim.keymap.set('n', '<leader>vs', ':vsplit<CR>')
+vim.keymap.set('n', '<leader>hs', ':split<CR>')
+vim.keymap.set('n', '<leader>ts', ':split | | terminal<CR>')
+
+vim.keymap.set('t', '<Esc>', '<C-\\><C-N>', { silent = true })
 
 -- Telescope
 local telescope = require("telescope.builtin")
