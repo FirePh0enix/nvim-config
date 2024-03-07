@@ -2,6 +2,8 @@ local lspconfig = require('lspconfig')
 local coq = require('coq')
 lspconfig.clangd.setup(coq.lsp_ensure_capabilities({}))
 lspconfig.zls.setup(coq.lsp_ensure_capabilities({}))
+lspconfig.pyright.setup(coq.lsp_ensure_capabilities({}))
+lspconfig.svelte.setup(coq.lsp_ensure_capabilities({}))
 
 lspconfig.gdscript.setup(coq.lsp_ensure_capabilities({
 	single_file_support = false,
