@@ -53,6 +53,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-N>', { silent = true })
 -- Telescope
 local telescope = require("telescope.builtin")
 vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
+vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
 
 -- 42 Header
 vim.g.user42 = 'ledelbec'
